@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-
+import BookStay from './pages/BookStay';
 import Layout from './components/Layout';
 import Home from './pages/Home';
 import Stays from './pages/Stays';
@@ -34,6 +34,7 @@ function App() {
           <Route path="about" element={<About />} />
           <Route path="partner" element={<Partner />} />
           <Route path="experiences" element={<Experience />} />
+          <Route path="experiences/live" element={<Experience />} />
           <Route path="experiences/care" element={<Care />} />
           <Route path="experiences/move" element={<Move />} />
           <Route path="experiences/table" element={<Table />} />
@@ -42,6 +43,7 @@ function App() {
           <Route path="privacy" element={<Legal title="Privacy Policy" />} />
           <Route path="terms" element={<Legal title="Terms & Conditions" />} />
           <Route path="cancellation" element={<Legal title="Cancellation Policy" />} />
+          <Route path="book-stay" element={<BookStay />} />
         </Route>
       </Routes>
     </BrowserRouter>

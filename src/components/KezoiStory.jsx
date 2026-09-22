@@ -6,10 +6,22 @@ import './KezoiStory.css';
 gsap.registerPlugin(ScrollTrigger);
 
 const partners = [
-  { title: 'The Table Partner', image: '/table_partner.jpg' },
-  { title: 'The Care Partner', image: '/care_partner.jpg' },
-  { title: 'The Move Partner', image: '/move_partner_v2.jpg' },
-  { title: 'Our Property Partners', image: '/property_partner.jpg' }
+  {
+    title: 'The Table Partner',
+    image: 'https://vioraelite.s3.eu-north-1.amazonaws.com/kezoi/The+Table+Partner.jpg'
+  },
+  {
+    title: 'The Care Partner',
+    image: 'https://vioraelite.s3.eu-north-1.amazonaws.com/kezoi/Kezoi_Care.jpg'
+  },
+  {
+    title: 'The Move Partner',
+    image: 'https://vioraelite.s3.eu-north-1.amazonaws.com/kezoi/Kezoi_Move.jpg'
+  },
+  {
+    title: 'Our Property Partners',
+    image: 'https://vioraelite.s3.eu-north-1.amazonaws.com/kezoi/Our+Property+Partners.jpg'
+  }
 ];
 
 const KezoiStory = () => {

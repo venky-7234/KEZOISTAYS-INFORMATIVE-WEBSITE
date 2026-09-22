@@ -134,13 +134,12 @@ const Journal = () => {
   }, []);
 
   const categories = [
-    { name: 'Homes', image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80', size: 'large' },
-    { name: 'People', image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', size: 'portrait' },
-    { name: 'Food', image: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80', size: 'landscape' },
-    { name: 'Cities', image: 'https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', size: 'portrait' },
-    { name: 'Travel', image: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80', size: 'large' },
-    { name: 'Design', image: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', size: 'portrait' },
-    { name: 'Kezoi Life', image: 'https://images.unsplash.com/photo-1556910103-1c02745aae4d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80', size: 'landscape' }
+    { name: 'Homes', image: 'https://vioraelite.s3.eu-north-1.amazonaws.com/kezoi/HomesHd.jpg', size: 'large' },
+    { name: 'People', image: 'https://vioraelite.s3.eu-north-1.amazonaws.com/kezoi/Peoplehd.jpg', size: 'portrait' },
+    { name: 'Food', image: 'https://vioraelite.s3.eu-north-1.amazonaws.com/kezoi/food_2_11zon.jpg', size: 'landscape' },
+    { name: 'Cities', image: 'https://vioraelite.s3.eu-north-1.amazonaws.com/kezoi/Cities.png', size: 'portrait' },
+    { name: 'Travel', image: 'https://vioraelite.s3.eu-north-1.amazonaws.com/kezoi/Travel_8_11zon.jpg', size: 'large' },
+    
   ];
 
   return (

@@ -1,6 +1,6 @@
 .hero-split {
   display: flex;
-  flex-direction: column; /* Mobile first: stack as rows */
+  flex-direction: column;
   width: 100%;
   height: 100vh;
   overflow: hidden;
@@ -9,22 +9,27 @@
 
 @media (min-width: 768px) {
   .hero-split {
-    flex-direction: row; /* Desktop: vertical columns side by side */
+    flex-direction: row;
   }
 }
 
 .hero-frame {
   flex: 1;
-  transition: flex 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94), filter 0.6s ease;
+  transition:
+    flex 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    filter 0.6s ease;
+
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
+
   padding: 40px 20px;
   overflow: hidden;
   text-decoration: none;
-  border-right: 1px solid rgba(255, 255, 255, 0.1); /* Subtle separator */
+
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -41,44 +46,71 @@
   .hero-frame {
     border-bottom: none;
   }
+
   .hero-frame:last-child {
     border-right: none;
   }
 }
 
+
+/* ========================================
+   FRAME BACKGROUND
+======================================== */
+
 .frame-bg {
   position: absolute;
   top: 0;
   left: 0;
+
   width: 100%;
   height: 100%;
+
   background-size: cover;
   background-position: center;
+
   z-index: 1;
-  transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+  transition:
+    transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
+
+
+/* ========================================
+   FRAME OVERLAY
+======================================== */
 
 .frame-overlay {
   position: absolute;
   top: 0;
   left: 0;
+
   width: 100%;
   height: 100%;
+
   background: linear-gradient(
     to bottom,
     rgba(14, 25, 20, 0.1) 0%,
     rgba(14, 25, 20, 0.4) 50%,
     rgba(14, 25, 20, 0.85) 100%
   );
+
   z-index: 2;
+
   transition: background 0.5s ease;
 }
+
+
+/* ========================================
+   FRAME CONTENT
+======================================== */
 
 .frame-content {
   position: relative;
   z-index: 3;
+
   text-align: center;
   color: var(--color-ivory);
+
   transition: transform 0.4s ease;
 }
 
@@ -86,6 +118,7 @@
   font-family: var(--font-heading);
   font-size: 2.2rem;
   font-weight: 500;
+
   margin-bottom: 10px;
   letter-spacing: 1px;
 }
@@ -100,13 +133,19 @@
   font-family: var(--font-body);
   font-size: 0.8rem;
   font-weight: 600;
+
   letter-spacing: 3px;
   text-transform: uppercase;
+
   opacity: 0.8;
   display: block;
 }
 
-/* Hover Effects */
+
+/* ========================================
+   HOVER EFFECTS
+======================================== */
+
 @media (min-width: 768px) {
   .hero-frame:hover {
     z-index: 10;
@@ -135,44 +174,75 @@
   opacity: 1;
 }
 
-/* Floating Icons */
+
+/* ========================================
+   HERO FLOATING ACTIONS
+======================================== */
+
 .hero-floating-icons {
-  position: absolute;
-  bottom: 40px;
+  position: fixed;
+
   right: 40px;
+  bottom: 40px;
+
   display: flex;
   flex-direction: column;
+  align-items: flex-end;
+
   gap: 15px;
-  z-index: 100;
+
+  z-index: 1001;
 }
 
-@media (max-width: 768px) {
-  .hero-floating-icons {
-    bottom: 30px;
-    right: 20px;
-  }
-}
+
+/* ========================================
+   INSTAGRAM + WHATSAPP
+======================================== */
 
 .hero-float-icon {
   width: 50px;
   height: 50px;
+
+  flex-shrink: 0;
+
   border-radius: 50%;
+
   background-color: rgba(249, 246, 240, 0.1);
+
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   color: var(--color-ivory);
   text-decoration: none;
+
   border: 1px solid rgba(249, 246, 240, 0.2);
+
   transition: all 0.3s ease;
+
   overflow: hidden;
 }
 
+
+/* Default icon */
+
 .hero-float-icon svg {
-  transition: transform 0.3s ease;
+  width: 24px;
+  height: 24px;
+
+  display: block;
+
+  transition:
+    transform 0.3s ease,
+    width 0.3s ease,
+    height 0.3s ease;
 }
+
+
+/* Hover */
 
 .hero-float-icon:hover {
   background-color: var(--color-gold);
@@ -184,25 +254,115 @@
   transform: scale(1.1);
 }
 
+
+/* ========================================
+   WHATSAPP ICON
+======================================== */
+
+.hero-whatsapp-icon svg {
+  width: 24px;
+  height: 24px;
+
+  display: block;
+
+  /*
+    Small optical correction.
+    Keeps the WhatsApp icon visually centered
+    instead of appearing to lean backward.
+  */
+  transform: translateX(0.5px) translateY(0);
+
+  stroke-width: 2;
+}
+
+.hero-whatsapp-icon:hover svg {
+  transform: translateX(0.5px) translateY(0) scale(1.1);
+}
+
+
+/* ========================================
+   BOOK STAY
+======================================== */
+
 .hero-book-icon {
   width: auto;
+  min-width: 150px;
+  height: 50px;
+
   border-radius: 30px;
+
   padding: 0 20px;
   gap: 10px;
+
   font-family: var(--font-heading);
   letter-spacing: 1px;
   font-size: 0.9rem;
+
+  box-sizing: border-box;
+
+  box-shadow:
+    0 6px 18px rgba(0, 0, 0, 0.25);
+
+  z-index: 1002;
 }
+
+
+/* ========================================
+   BOOK STAY TEXT
+======================================== */
 
 .hero-float-text {
   white-space: nowrap;
 }
 
+
+/* ========================================
+   MOBILE
+======================================== */
+
 @media (max-width: 768px) {
+
+  .hero-floating-icons {
+    right: 20px;
+    bottom: 30px;
+    gap: 12px;
+  }
+
+  .hero-float-icon {
+    width: 46px;
+    height: 46px;
+  }
+
+  .hero-float-icon svg {
+    width: 23px;
+    height: 23px;
+  }
+
+  .hero-whatsapp-icon svg {
+    width: 23px;
+    height: 23px;
+
+    transform: translateX(0.5px);
+  }
+
+  .hero-whatsapp-icon:hover svg {
+    transform: translateX(0.5px) scale(1.1);
+  }
+
   .hero-book-icon {
+    min-width: 135px;
+    height: 46px;
     padding: 0 15px;
   }
+
   .hero-float-text {
     font-size: 0.8rem;
   }
+}
+
+.hero-whatsapp-icon svg {
+  width: 24px;
+  height: 24px;
+  display: block;
+  fill: currentColor;
 }

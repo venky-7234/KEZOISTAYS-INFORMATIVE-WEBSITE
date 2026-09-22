@@ -29,6 +29,30 @@
   box-sizing: border-box;
 }
 
+/* .header-logo-img {
+  width: 140px;
+  height: auto;
+  transition: all 0.3s ease;
+  object-fit: contain;
+}
+
+@media (min-width: 900px) {
+  .header-logo-img {
+    width: 200px;
+    height: auto;
+  }
+} */
+
+
+
+
+
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
 .header-logo-img {
   width: 140px;
   height: auto;
@@ -42,6 +66,10 @@
     height: auto;
   }
 }
+
+
+
+
 
 .nav-links {
   display: none;
@@ -264,4 +292,322 @@
   justify-content: flex-start;
   align-items: flex-start; /* Left align main links */
   gap: 20px;
+}
+
+
+
+
+
+
+
+
+
+/* ========================================
+   BOOK A STAY — DESKTOP
+======================================== */
+
+.book-stay-btn {
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 11px 24px;
+  margin-left: 14px;
+
+  /* Premium Champagne Gold */
+  background: linear-gradient(
+    135deg,
+    #c79a3b 0%,
+    #f2d27a 45%,
+    #d4aa4f 70%,
+    #b8862d 100%
+  );
+
+  color: #1f3029 !important;
+
+  text-decoration: none;
+  border: 1px solid rgba(255, 230, 150, 0.85);
+  border-radius: 30px;
+
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+
+  box-shadow:
+    0 5px 18px rgba(198, 154, 59, 0.30),
+    inset 0 1px 0 rgba(255, 255, 255, 0.65);
+
+  overflow: hidden;
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    filter 0.35s ease,
+    background 0.35s ease,
+    color 0.35s ease;
+}
+
+
+/* ========================================
+   DESKTOP — SHINE EFFECT
+======================================== */
+
+.book-stay-btn::before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: -130%;
+
+  width: 70%;
+  height: 100%;
+
+  background: linear-gradient(
+    110deg,
+    transparent 20%,
+    rgba(255, 255, 255, 0.15) 40%,
+    rgba(255, 255, 255, 0.75) 50%,
+    rgba(255, 255, 255, 0.15) 60%,
+    transparent 80%
+  );
+
+  transform: skewX(-20deg);
+
+  transition: left 0.8s ease;
+
+  pointer-events: none;
+}
+
+
+/* ========================================
+   DESKTOP — HOVER
+   Deep Gold / Luxury Effect
+======================================== */
+
+.book-stay-btn:hover {
+  background: linear-gradient(
+    135deg,
+    #a87820 0%,
+    #d8b65c 45%,
+    #b88b32 75%,
+    #95691c 100%
+  );
+
+  color: #ffffff !important;
+
+  transform: translateY(-3px);
+
+  filter: brightness(1.08);
+
+  box-shadow:
+    0 10px 30px rgba(198, 154, 59, 0.45),
+    0 0 20px rgba(242, 210, 122, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.55);
+}
+
+.book-stay-btn:hover::before {
+  left: 140%;
+}
+
+
+/* ========================================
+   DESKTOP — CLICK
+======================================== */
+
+.book-stay-btn:active {
+  transform: translateY(-1px) scale(0.98);
+
+  box-shadow:
+    0 5px 15px rgba(198, 154, 59, 0.35);
+}
+
+
+/* ========================================
+   BOOK A STAY — MOBILE
+======================================== */
+
+.mobile-book-stay-btn {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: fit-content;
+  min-width: 190px;
+
+  margin: 22px auto 8px;
+  padding: 14px 30px;
+
+  /* Premium Champagne Gold */
+  background: linear-gradient(
+    135deg,
+    #c79a3b 0%,
+    #f2d27a 45%,
+    #d4aa4f 70%,
+    #b8862d 100%
+  );
+
+  color: #1f3029 !important;
+
+  text-decoration: none;
+  border: 1px solid rgba(255, 230, 150, 0.85);
+  border-radius: 30px;
+
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.3px;
+  text-transform: uppercase;
+
+  box-shadow:
+    0 7px 22px rgba(198, 154, 59, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.65);
+
+  overflow: hidden;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    filter 0.3s ease,
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+
+/* ========================================
+   MOBILE — SHINE EFFECT
+======================================== */
+
+.mobile-book-stay-btn::before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: -130%;
+
+  width: 70%;
+  height: 100%;
+
+  background: linear-gradient(
+    110deg,
+    transparent 20%,
+    rgba(255, 255, 255, 0.15) 40%,
+    rgba(255, 255, 255, 0.75) 50%,
+    rgba(255, 255, 255, 0.15) 60%,
+    transparent 80%
+  );
+
+  transform: skewX(-20deg);
+
+  transition: left 0.8s ease;
+
+  pointer-events: none;
+}
+
+
+/* ========================================
+   MOBILE — HOVER
+======================================== */
+
+.mobile-book-stay-btn:hover {
+  background: linear-gradient(
+    135deg,
+    #a87820 0%,
+    #d8b65c 45%,
+    #b88b32 75%,
+    #95691c 100%
+  );
+
+  color: #ffffff !important;
+
+  transform: translateY(-3px);
+
+  filter: brightness(1.08);
+
+  box-shadow:
+    0 11px 30px rgba(198, 154, 59, 0.45),
+    0 0 20px rgba(242, 210, 122, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.55);
+}
+
+.mobile-book-stay-btn:hover::before {
+  left: 140%;
+}
+
+
+/* ========================================
+   MOBILE — TAP
+======================================== */
+
+.mobile-book-stay-btn:active {
+  transform: scale(0.96);
+
+  box-shadow:
+    0 5px 16px rgba(198, 154, 59, 0.35);
+}
+
+
+/* ========================================
+   ACCESSIBILITY
+======================================== */
+
+.book-stay-btn:focus-visible,
+.mobile-book-stay-btn:focus-visible {
+  outline: 2px solid #f2d27a;
+  outline-offset: 4px;
+}
+
+
+/* ========================================
+   REDUCE MOTION
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .book-stay-btn,
+  .mobile-book-stay-btn,
+  .book-stay-btn::before,
+  .mobile-book-stay-btn::before {
+    transition: none;
+  }
+}
+
+/* Mobile Header Actions */
+.mobile-header-actions {
+  display: none;
+}
+
+@media (max-width: 899px) {
+  .mobile-header-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    margin-left: auto;
+    margin-right: 12px;
+    position: relative;
+    z-index: 1002;
+    flex-shrink: 0;
+  }
+
+  .mobile-header-action {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    color: var(--color-gold);
+    text-decoration: none;
+    position: relative;
+    z-index: 1002;
+    flex-shrink: 0;
+  }
+
+  .mobile-header-action svg {
+    width: 24px;
+    height: 24px;
+    display: block;
+  }
 }
