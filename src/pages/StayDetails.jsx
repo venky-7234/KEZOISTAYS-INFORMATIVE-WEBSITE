@@ -1,8 +1,9 @@
 import React from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useOutletContext } from 'react-router-dom';
 
 const StayDetails = () => {
   const { slug } = useParams();
+  const { openBooking } = useOutletContext();
 
   return (
     <div className="section-padding" style={{ paddingTop: '150px' }}>
@@ -25,7 +26,7 @@ const StayDetails = () => {
             </p>
           </div>
           <div>
-            <button className="btn-primary" style={{ width: '100%', padding: '20px', fontSize: '1.2rem' }}>Book Now</button>
+            <button type="button" onClick={openBooking} className="btn-primary" style={{ width: '100%', padding: '20px', fontSize: '1.2rem' }}>Book Now</button>
           </div>
         </div>
       </div>

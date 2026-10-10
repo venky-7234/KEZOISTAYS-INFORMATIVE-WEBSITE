@@ -26,7 +26,7 @@ const LinkedinIcon = () => (
   </svg>
 );
 
-const Header = ({ mobileMenuOpen, setMobileMenuOpen }) => {
+const Header = ({ mobileMenuOpen, setMobileMenuOpen, onBook }) => {
   const [scrolled, setScrolled] = useState(false);
 
   const toggleMobileMenu = () => {
@@ -76,9 +76,7 @@ const Header = ({ mobileMenuOpen, setMobileMenuOpen }) => {
   <Link to="/journal">Journal</Link>
   <Link to="/partner">Partner with us</Link>
 
-  <Link to="/book-stay" className="book-stay-btn">
-  Book Your Stay
-</Link>
+  <button type="button" className="book-stay-btn" onClick={onBook}>Book Now</button>
 </nav>
         {/* Mobile Header Actions - shown only when menu is open */}
 {mobileMenuOpen && (
@@ -156,9 +154,7 @@ const Header = ({ mobileMenuOpen, setMobileMenuOpen }) => {
           </div>
           <Link to="/journal" onClick={toggleMobileMenu}>Journal</Link>
           <Link to="/partner" onClick={toggleMobileMenu}>Partner with us</Link>
-          <Link to="/book-stay" onClick={toggleMobileMenu} className="mobile-book-stay-btn">
-          Book Your Stay
-        </Link>
+          <button type="button" onClick={() => { toggleMobileMenu(); onBook(); }} className="mobile-book-stay-btn">Book Now</button>
         </div>
       </div>
     </header>
