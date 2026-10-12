@@ -27,6 +27,10 @@
   line-height: 1.2;
 }
 
+.customer-stories-title-spaced {
+  margin-bottom: 50px;
+}
+
 .customer-stories-desc {
   font-size: 1.1rem;
   color: var(--color-grey);
@@ -43,19 +47,27 @@
   cursor: pointer;
   margin-bottom: 50px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  display: block;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+}
+
+.video-thumbnail-container:focus-visible {
+  outline: 3px solid var(--color-gold);
+  outline-offset: 5px;
 }
 
 .video-thumbnail {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.7s ease, filter 0.5s ease;
-  filter: brightness(0.8) contrast(1.1);
+  transition: transform 0.7s ease;
 }
 
 .video-thumbnail-container:hover .video-thumbnail {
   transform: scale(1.03);
-  filter: brightness(0.6) contrast(1.1);
 }
 
 .play-button-overlay {
@@ -71,7 +83,7 @@
 }
 
 .video-thumbnail-container:hover .play-button-overlay {
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: transparent;
 }
 
 .play-button {
@@ -100,6 +112,58 @@
   display: inline-block;
 }
 
+.customer-video-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 76px 24px 24px;
+  background: rgba(3, 17, 14, 0.96);
+  backdrop-filter: blur(8px);
+}
+
+.customer-video-player {
+  display: block;
+  width: min(100%, 1440px);
+  height: min(100%, calc(100vh - 100px));
+  object-fit: contain;
+  background: #000;
+  box-shadow: 0 20px 80px rgba(0, 0, 0, 0.5);
+}
+
+.customer-video-close {
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border: 1px solid rgba(246, 245, 240, 0.45);
+  border-radius: 999px;
+  background: var(--color-ivory);
+  color: var(--color-dark);
+  font: inherit;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.customer-video-close:hover {
+  background: var(--color-gold);
+  transform: translateY(-1px);
+}
+
+.customer-video-close:focus-visible {
+  outline: 3px solid var(--color-gold);
+  outline-offset: 3px;
+}
+
 @media (max-width: 768px) {
   .customer-stories-title {
     font-size: 2.2rem;
@@ -112,5 +176,18 @@
   .play-button {
     width: 60px;
     height: 60px;
+  }
+
+  .customer-video-modal {
+    padding: 68px 12px 12px;
+  }
+
+  .customer-video-close {
+    top: 14px;
+    right: 14px;
+  }
+
+  .customer-video-player {
+    height: min(100%, calc(100vh - 82px));
   }
 }
