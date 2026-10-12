@@ -226,7 +226,7 @@
 
 /* Marquee Social Section */
 .journal-social-section {
-  padding: 60px 0;
+  padding: 30px 0;
   overflow: hidden;
   background-color: var(--color-dark);
   border-top: 1px solid rgba(249, 246, 240, 0.05);
@@ -247,13 +247,13 @@
 .marquee-content {
   display: flex;
   align-items: center;
-  gap: 80px;
-  padding-right: 80px;
+  gap: 50px;
+  padding-right: 50px;
 }
 
 .marquee-content span {
   font-family: var(--font-heading);
-  font-size: 3rem;
+  font-size: 2.1rem;
   white-space: nowrap;
   color: rgba(249, 246, 240, 0.15); /* Slightly more visible */
   text-transform: uppercase;
@@ -267,6 +267,11 @@
   transition: color 0.3s ease, transform 0.3s ease;
 }
 
+.marquee-content a svg {
+  width: 30px;
+  height: 30px;
+}
+
 .marquee-content a:hover {
   color: var(--color-gold);
   transform: scale(1.1);
@@ -274,11 +279,11 @@
 
 @media (max-width: 768px) {
   .journal-social-section {
-    padding: 15px 0;
+    padding: 10px 0;
   }
-  .marquee-content span { font-size: 1.2rem; }
-  .marquee-content a svg { width: 20px; height: 20px; }
-  .marquee-content { gap: 25px; padding-right: 25px; }
+  .marquee-content span { font-size: 1rem; }
+  .marquee-content a svg { width: 18px; height: 18px; }
+  .marquee-content { gap: 20px; padding-right: 20px; }
 }
 
 /* Newsletter Section */

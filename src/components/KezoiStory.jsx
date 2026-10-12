@@ -16,7 +16,7 @@ const partners = [
   },
   {
     title: 'The Move Partner',
-    image: 'https://vioraelite.s3.eu-north-1.amazonaws.com/kezoi/Kezoi_Move.jpg'
+    image: 'https://vioraelite.s3.eu-north-1.amazonaws.com/kezoi/Kezoi_Move.png'
   },
   {
     title: 'Our Property Partners',
@@ -62,7 +62,7 @@ const KezoiStory = () => {
               <div className="story-card-image-container">
                 <div 
                   className="story-card-image"
-                  style={{ backgroundImage: `url('${person.image}')` }}
+                  style={{ backgroundImage: person.image ? `url('${person.image}')` : 'none' }}
                 ></div>
               </div>
               <h3 className="story-card-title">{person.title}</h3>
@@ -74,7 +74,7 @@ const KezoiStory = () => {
               <div className="story-card-image-container">
                 <div 
                   className="story-card-image"
-                  style={{ backgroundImage: `url('${person.image}')` }}
+                  style={{ backgroundImage: person.image ? `url('${person.image}')` : 'none' }}
                 ></div>
               </div>
               <h3 className="story-card-title">{person.title}</h3>

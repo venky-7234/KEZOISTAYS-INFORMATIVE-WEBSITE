@@ -43,8 +43,8 @@ const Hero = ({ mobileMenuOpen }) => {
     {
       id: 'live',
       title: 'Kezoi Live',
-      image: 'https://vioraelite.s3.eu-north-1.amazonaws.com/kezoi/Kezoi_Live01.png',
-      link: '/experiences/live'
+      image: '/kezoi-live-property-v2.png',
+      link: '/properties'
     },
     {
       id: 'care',
@@ -80,7 +80,7 @@ const Hero = ({ mobileMenuOpen }) => {
         >
           <div
             className="frame-bg"
-            style={{ backgroundImage: `url('${panel.image}')` }}
+            style={{ backgroundImage: panel.image ? `url('${panel.image}')` : 'none' }}
           ></div>
           <div className="frame-overlay"></div>
 

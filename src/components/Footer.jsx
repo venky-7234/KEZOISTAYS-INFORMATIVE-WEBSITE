@@ -58,8 +58,7 @@ const Footer = () => {
           <div className="footer-links-grid">
             <div className="footer-col">
               <h4>Links</h4>
-              <Link to="/about">Our Presence</Link>
-              <Link to="/experiences">Experiences</Link>
+              <Link to="/our-stays">Our Stays</Link>
               <Link to="/journal">Journal</Link>
               <Link to="/partner">Partner with us</Link>
             </div>

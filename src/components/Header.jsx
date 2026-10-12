@@ -55,16 +55,12 @@ const Header = ({ mobileMenuOpen, setMobileMenuOpen, onBook }) => {
           </Link>
         </div>
         <nav className="nav-links">
-  <Link to="/about">Our Presence</Link>
+  <Link to="/our-stays">Our Stays</Link>
 
   <div className="nav-dropdown">
-    <Link
-      to="/experiences"
-      className="nav-dropdown-trigger"
-      style={{ textDecoration: 'none' }}
-    >
+    <span className="nav-dropdown-trigger">
       Experiences
-    </Link>
+    </span>
 
     <div className="nav-dropdown-content">
       <Link to="/experiences/care">KEZOI CARE</Link>
@@ -145,9 +141,9 @@ const Header = ({ mobileMenuOpen, setMobileMenuOpen, onBook }) => {
         <div className="mobile-nav-pattern"></div>
         <div className="mobile-nav-content">
           <Link to="/" onClick={toggleMobileMenu}>Home</Link>
-          <Link to="/about" onClick={toggleMobileMenu}>Our Presence</Link>
+          <Link to="/our-stays" onClick={toggleMobileMenu}>Our Stays</Link>
           <div className="mobile-nav-group">
-            <Link to="/experiences" className="mobile-nav-title" onClick={toggleMobileMenu} style={{ textDecoration: 'none' }}>Experiences</Link>
+            <span className="mobile-nav-title">Experiences</span>
             <Link to="/experiences/care" onClick={toggleMobileMenu}>KEZOI CARE</Link>
             <Link to="/experiences/move" onClick={toggleMobileMenu}>KEZOI MOVE</Link>
             <Link to="/experiences/table" onClick={toggleMobileMenu}>KEZOI TABLE</Link>

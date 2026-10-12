@@ -1,11 +1,10 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Navigate, Routes, Route } from 'react-router-dom';
 import BookStay from './pages/BookStay';
 import Layout from './components/Layout';
 import Home from './pages/Home';
 import Stays from './pages/Stays';
 import StayDetails from './pages/StayDetails';
-import Experience from './pages/Experience';
 import Locations from './pages/Locations';
 import About from './pages/About';
 import Contact from './pages/Contact';
@@ -31,10 +30,11 @@ function App() {
           <Route path="gallery" element={<Gallery />} />
           <Route path="collaboration" element={<Collaboration />} />
           <Route path="journal" element={<Journal />} />
-          <Route path="about" element={<About />} />
+          <Route path="our-stays" element={<About />} />
+          <Route path="about" element={<Navigate to="/our-stays" replace />} />
           <Route path="partner" element={<Partner />} />
-          <Route path="experiences" element={<Experience />} />
-          <Route path="experiences/live" element={<Experience />} />
+          <Route path="experiences" element={<Navigate to="/" replace />} />
+          <Route path="experiences/live" element={<Navigate to="/properties" replace />} />
           <Route path="experiences/care" element={<Care />} />
           <Route path="experiences/move" element={<Move />} />
           <Route path="experiences/table" element={<Table />} />
