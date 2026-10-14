@@ -6,6 +6,7 @@ const API = (import.meta.env.VITE_API_BASE_URL || 'https://api.kezoistays.com').
 const FALLBACK_IMAGE = '/kezoi-live-property-v2.png';
 const FEATURED_IMAGE = 'https://vioraelite.s3.eu-north-1.amazonaws.com/kezoi/A+Kezoi_Updated/living-room/IMG_6309.webp';
 const TG0002_IMAGE = 'https://vioraelite.s3.eu-north-1.amazonaws.com/kezoi/kezoi+property-2/living+area/A6707684.webp';
+const MICROSITE_CODES = new Set(['TG-0001', 'TG-0002']);
 const titleCase = value => String(value || '').replace(/\b\w/g, letter => letter.toUpperCase());
 const propertyImage = property => property.cover_image_url || property.hero_image_url || property.image_url || ({
   'TG-0001': FEATURED_IMAGE,
@@ -53,7 +54,7 @@ const About = () => {
           {propertiesState === 'ready' && properties.map((property) => {
             const location = [property.area, property.city].filter(Boolean).map(titleCase).join(', ');
             const name = property.property_name || titleCase(property.property_type) || 'Kezoi Stay';
-            const propertyUrl = property.microsite_url || property.website_url || (property.property_code === 'TG-0001' ? '/TG-0001' : `/book-stay?property=${encodeURIComponent(property.property_code)}`);
+            const propertyUrl = property.microsite_url || property.website_url || (MICROSITE_CODES.has(property.property_code) ? `/${encodeURIComponent(property.property_code)}/` : `/book-stay?property=${encodeURIComponent(property.property_code)}`);
             return <a key={property.id || property.property_code} href={propertyUrl} className="presence-property-card" aria-label={`Explore ${property.property_code}, ${name}${location ? ` in ${location}` : ''}`}>
               <div className="property-image-wrapper">
                 <img
